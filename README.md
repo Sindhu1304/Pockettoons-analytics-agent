@@ -2,9 +2,9 @@
 
 ## What is this?
 
-I built an AI agent that lets anyone on the team ask product analytics questions in plain English and get real answers and no SQL knowledge needed.
+I built an AI agent that lets anyone on the team ask product analytics questions in plain English and get real answers - no SQL knowledge needed.
 
-The idea is simple. Instead of pinging a data analyst every time you want to know "what was our DAU last week?" or "which country is bringing in the most revenue?", user just ask the agent directly and it figures out the SQL, runs it, and tells you the answer.
+The idea is simple. Instead of pinging a data analyst every time you want to know "what was our DAU last week?" or "which country is bringing in the most revenue?", users just ask the agent directly and it figures out the SQL, runs it, and tells you the answer.
 
 ---
 
@@ -86,8 +86,7 @@ Most metrics matched exactly — MAU numbers, revenue figures, session counts. T
 
 For a proper production evaluation I would build a labeled test set of around 100 questions — mix of all 5 question types — run the agent against them, and track SQL correctness rate and answer quality. I'd also separately measure the ambiguity detector's precision and recall using a set of questions labeled as vague or specific.
 
-Current accuracy against manual SQL: around 87%.
-
+In manual spot-checking against hand-written SQL queries, most answers matched expected outputs.
 ---
 
 ## Scaling to 100+ Tables
@@ -111,5 +110,17 @@ The D7 retention query sometimes returns slightly different numbers depending on
 ## Tech Used
 
 Python, SQLite, Groq API, Llama 3.3 70B, Pandas, Matplotlib, Google Colab
+
+---
+
+---
+
+## Project Structure
+
+generate_data.ipynb → synthetic data generation
+analytics_queries.ipynb → manual SQL validation
+ai_agent.ipynb → core NL-to-SQL pipeline
+demo.ipynb → walkthrough/demo notebook
+pockettoons.db → SQLite database
 
 ---
