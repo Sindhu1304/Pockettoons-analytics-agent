@@ -2,9 +2,9 @@
 
 ## What is this?
 
-I built an AI agent that lets anyone on the team ask product analytics questions in plain English and get real answers — no SQL knowledge needed.
+I built an AI agent that lets anyone on the team ask product analytics questions in plain English and get real answers and no SQL knowledge needed.
 
-The idea is simple. Instead of pinging a data analyst every time you want to know "what was our DAU last week?" or "which country is bringing in the most revenue?", you just ask the agent directly and it figures out the SQL, runs it, and tells you the answer.
+The idea is simple. Instead of pinging a data analyst every time you want to know "what was our DAU last week?" or "which country is bringing in the most revenue?", user just ask the agent directly and it figures out the SQL, runs it, and tells you the answer.
 
 ---
 
