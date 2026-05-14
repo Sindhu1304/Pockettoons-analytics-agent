@@ -64,6 +64,18 @@ I picked Groq with Llama 3.3 70B because it's completely free, fast enough for t
 
 ---
 
+---
+
+## Project Structure
+
+generate_data.ipynb → synthetic data generation
+analytics_queries.ipynb → manual SQL validation
+ai_agent.ipynb → core NL-to-SQL pipeline
+demo.ipynb → walkthrough/demo notebook
+pockettoons.db → SQLite database
+
+---
+
 ## Handling Wrong SQL
 
 LLMs don't always write perfect SQL. Here's how I dealt with it:
@@ -113,14 +125,3 @@ Python, SQLite, Groq API, Llama 3.3 70B, Pandas, Matplotlib, Google Colab
 
 ---
 
----
-
-## Project Structure
-
-generate_data.ipynb → synthetic data generation
-analytics_queries.ipynb → manual SQL validation
-ai_agent.ipynb → core NL-to-SQL pipeline
-demo.ipynb → walkthrough/demo notebook
-pockettoons.db → SQLite database
-
----
