@@ -119,26 +119,38 @@ instantly instead of calling the AI again.
 
 ## Why I Chose These Tools
 
-**Groq with Llama 3.3 70B**
-Groq is completely free which was the main reason. I actually tested a smaller 
-model first (Llama 3.1 8B) but it kept writing wrong SQL for complex queries 
-especially the D7 retention calculation which needs a CTE and a JOIN. The 
-larger model handled those correctly every time so I switched.
+**Groq (free AI API)**
+I needed an AI model to write SQL automatically. 
+OpenAI and Anthropic both require payment. Groq is 
+completely free and fast enough for this use case 
+so it was the obvious choice.
+
+**Llama 3.3 70B model**
+I didn't just pick the biggest model straight away. 
+I started with a smaller model (Llama 3.1 8B) because 
+smaller = faster. But it kept writing wrong SQL for 
+complex queries like D7 retention which needs multiple 
+steps. The larger 70B model got those right every time 
+so I switched. Bigger model, slower by about 1 second, 
+but correct SQL is worth it.
 
 **SQLite**
-No setup needed, just a file. The SQL it uses is almost identical to what 
-BigQuery or Snowflake uses so swapping it out later would be straightforward — 
-only the part that runs the query would need to change, everything else stays 
-the same.
+I needed somewhere to store 50K rows of data. SQLite 
+is just a single file — no installation, no server, 
+no account needed. It works instantly. The SQL syntax 
+is almost identical to BigQuery or Snowflake so if 
+this moved to production, only the part that connects 
+to the database would need to change. Everything else 
+stays the same.
 
-**No agent framework like LangChain**
-I looked at using LangChain but for what I needed — take a question, write SQL, 
-run it, explain it — adding a framework would have meant more code not less. 
-The whole agent is about 80 lines of Python that I can read and debug easily. 
-I'd rather have simple code I understand than a framework doing things behind 
-the scenes.
-
----
+**No LangChain or agent framework**
+LangChain is a popular framework for building AI agents. 
+I looked at it but my agent only does 4 simple steps — 
+check if the question is clear, write SQL, run SQL, 
+explain the answer. LangChain would have added hundreds 
+of lines of framework code on top of what is actually 
+an 80 line problem. Simple code you can read and debug 
+is better than a framework doing things you can't see.
 
 ## When SQL Goes Wrong
 
