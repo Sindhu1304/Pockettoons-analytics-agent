@@ -6,7 +6,7 @@
 ## What I Built and Why
 
 I built an AI agent where anyone on the team can just type a question like 
-"what was our DAU last week?" and get a real answer with actual numbers — 
+"what was our DAU last week?" and get a real answer with actual numbers , 
 without writing a single line of SQL.
 
 The problem I was solving is simple. In most companies, if a product manager 
