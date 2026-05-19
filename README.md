@@ -48,6 +48,7 @@ I created synthetic data for a fictional webtoon streaming app with 4 tables:
 - **transactions** — 28,000 payments (success, failed, refunded)
 - **content_views** — 30,000 episode watches with completion percentage
 The data covers October 2024 to January 2025.
+
 I picked these 4 tables because they cover the questions a product team 
 actually asks every day. If someone asks about DAU, that comes from sessions. 
 Revenue questions come from transactions. Content performance comes from 
