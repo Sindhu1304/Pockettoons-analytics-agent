@@ -66,8 +66,6 @@ pockettoons.db → SQLite database
 
 ---
 
----
-
 ## How the Agent Works
 
 When you ask a question, 4 things happen in order:
