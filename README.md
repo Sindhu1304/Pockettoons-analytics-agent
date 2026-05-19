@@ -119,9 +119,85 @@ The D7 retention query sometimes returns slightly different numbers depending on
 
 ---
 
-## Tech Used
+## Techstack Used
 
 Python, SQLite, Groq API, Llama 3.3 70B, Pandas, Matplotlib, Google Colab
 
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# PocketToons Analytics Q&A Agent
+
+## What is this?
+
+I built an AI agent that lets anyone on the team ask product analytics questions in plain English and get real answers — no SQL knowledge needed.
+
+The idea is simple. Instead of pinging a data analyst every time you want to know "what was our DAU last week?" or "which country is bringing in the most revenue?", you just ask the agent directly and it figures out the SQL, runs it, and tells you the answer.
+
+I chose Option B because it directly maps to what a product analytics role actually does — answering business questions from data quickly and clearly.
+
+---
+
+## How to Run
+
+This project runs on Google Colab. You'll need a free Groq API key from https://console.groq.com
+
+Run the notebooks in this order:
+
+1. `Generate_data.ipynb` — generates the database
+2. Download `pockettoons.db` from Colab to your PC
+3. `Analytics_queries.ipynb` — upload the db, run manual SQL queries
+4. `Ai_agent.ipynb` — upload the db, paste your API key, run the agent
+5. `demo.ipynb` — full walkthrough with charts
+
+> Note: API key is not included for security. Get your free key from https://console.groq.com and paste it in Ai_agent.ipynb and demo.ipynb
+
+---
+
+## The Dataset
+
+I created synthetic data for a fictional webtoon streaming app with 4 tables:
+
+- **users** — 10,000 users with country, platform, plan type, signup date
+- **sessions** — 50,000 app sessions with timestamps
+- **transactions** — 28,000 payments (success, failed, refunded)
+- **content_views** — 30,000 episode watches with completion percentage
+
+The data covers October 2024 to January 2025 and is seeded with random.seed(42) so it reproduces the same data every time you run it.
+
+I chose these 4 tables because they cover everything a product team actually asks about — user growth, revenue, engagement, and retention. Every question the agent handles traces back to one or more of these tables.
+
+---
+
+## Architecture
+
+The agent works in 4 steps:
+
+
+
+
+
+
+
+
+
+
 
